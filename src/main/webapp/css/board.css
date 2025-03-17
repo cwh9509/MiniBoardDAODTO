@@ -1,0 +1,615 @@
+/* 전체적인 기본 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* 화면 전체 높이를 확보 */
+}
+
+/* 헤더 */
+header {
+    display: flex;
+    justify-content: center;  /* 중앙 정렬 */
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-bottom: 2px solid #607d8b; /* 은은한 청회색 테두리 */
+}
+
+
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+/* 헤더 우측 버튼 (로그인) */
+.header-actions {
+    position: absolute;
+    right: 20px;
+    top: 35px;  /* 헤더 상단에서 더 떨어지도록 설정 */
+}
+
+.mypage-btn {
+    background-color: #5a5a5a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mypage-btn:hover {
+    background-color: #8e735b; /* 부드러운 회색 블루로 호버 */
+}
+
+.login-btn {
+    background-color: #5a5a5a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+    background-color: #8e735b; /* 부드러운 회색 블루로 호버 */
+}
+
+.header-actions span {
+    font-size: 1.2rem; /* 글자 크기 키우기 */
+    color: white; /* 하얀 글씨 */
+    font-weight: bold; /* 글자 두껍게 */
+}
+/*    헤더 라인 끝        */
+
+/*  게시판 메인 화면 */
+/* 게시판 목록 스타일 */
+.board-header {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center;
+    position: relative; /* 검색 폼을 오른쪽에 배치하기 위해 기준점 설정 */
+    margin-bottom: 20px;
+    padding : 10px;
+}
+
+.board-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 검색 폼을 오른쪽에 배치 */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    right: 0;
+}
+
+/* 검색 드롭다운 (카테고리 선택) */
+.search-form select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* 검색 입력창 */
+.search-form input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px; /* 입력창 너비 조절 */
+}
+
+/* 검색 버튼 */
+.search-form button {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #5a5a5a;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 검색 버튼 호버 효과 */
+.search-form button:hover {
+    background-color: #8e735b;
+}
+
+/* 새 게시글 작성 버튼 */
+.board-actions {
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.board-actions .btn {
+    background-color: #5a5a5a; /* 회색과 청색의 중간톤 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.board-actions .btn:hover {
+    background-color: #8e735b;
+}
+
+/* 테이블 스타일 */
+table {
+    width: 70%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff; /* 흰색 배경 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #b0bec5; /* 부드러운 회색 테두리 */
+    transition: background-color 0.3s ease;
+}
+
+table th {
+    background-color: #333; /* 헤더 배경색 */
+    color: white;
+    font-size: 1.1rem;
+}
+
+table td {
+    background-color: #ffffff; /* 흰색 */
+    color: #455a64; /* 진한 회색 텍스트 */
+    font-size: 1rem;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f1f1f1; /* 더 부드러운 밝은 회색 */
+}
+
+table a {
+    color: #607d8b; /* 버튼 색상과 동일한 회색-청색 톤 */
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+/* 테이블 호버 효과 */
+table tr:hover td {
+    background-color: #eceff1; /* 부드러운 밝은 회색 */
+}
+
+/* 페이징 쪽*/
+.pagination {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.pagination a {
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 0 3px;
+	border: 1px solid #ddd;
+	color: #555;
+}
+
+.pagination a.active {
+	background: #555;
+	color: #fff;
+	border-color: #555;
+}
+
+
+/* 게시글 작성 화면 */
+.write-form {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.write-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4f5b66; /* 차분한 색상 */
+}
+
+.write-form input, .write-form textarea {
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #b0bec5;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.write-form input[type="submit"] {
+    background-color: #5a5a5a; /* 회색-청색 톤 */
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.write-form input[type="submit"]:hover {
+    background-color: #8e735b;
+}
+
+.cancel-btn {
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #5a5a5a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.cancel-btn:hover {
+    background-color: #8e735b;
+}
+
+/* 게시글 작성 폼 */
+.write-board {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.write-board label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.write-board input[type="text"],
+.write-board textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0c6a3; /* 연한 갈색 테두리 */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #3e2a47;  /* 어두운 갈색 글자 */
+}
+
+.write-board textarea {
+    resize: vertical;
+    height: 200px;
+}
+
+.write-board button {
+    background-color: #8e735b; /* 은은한 갈색 배경 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.write-board button:hover {
+    background-color: #6d4f33; /* 어두운 갈색 호버 */
+    transform: translateY(-2px);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .write-board {
+        padding: 20px;
+    }
+
+    .write-board label {
+        font-size: 1rem;
+    }
+
+    .write-board input[type="text"],
+    .write-board textarea {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .write-board button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+/* 게시글 상세보기 */
+.post-detail {
+    width: 70%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.post-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.post-detail p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.post-detail .post-actions {
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.post-detail .post-actions .btn {
+    background-color: #5a5a5a;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.post-detail .post-actions .btn:hover {
+    background-color: #8e735b;
+}
+
+/* 댓글 목록 스타일 */
+.comments-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 댓글 항목 스타일 */
+.comments-list li {
+    display: flex;               /* flex 레이아웃 적용 */
+    flex-direction: column;      /* 각 항목을 세로로 배치 */
+    background-color: #f9f9f9;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #8e735b; /* 왼쪽에 경계선 추가 */
+    position: relative;          /* 삭제 버튼을 상대 위치로 배치 */
+}
+
+/* 댓글 항목에 호버 효과 추가 */
+.comments-list li:hover {
+    background-color: #f1f1f1; /* 호버 시 배경 색 변경 */
+}
+
+/* 댓글 작성자와 날짜를 같은 줄에 배치 */
+.comments-list li .comment-header {
+    display: flex;
+    justify-content: space-between;  /* 작성자와 날짜를 양쪽 끝으로 배치 */
+    margin-bottom: 10px;             /* 작성자와 날짜 사이 간격 */
+}
+
+/* 댓글 내용 영역 */
+.comments-list li .comment-content {
+    margin-top: 5px;                /* 댓글 내용에 마진 추가 (한 줄 내려놓기) */
+}
+
+/* 삭제 버튼을 우측 가운데에 배치 */
+.comments-list li .comment-delete-btn {
+    position: absolute;            /* 절대 위치로 배치 */
+    right: 10px;                   /* 오른쪽에 위치 */
+    top: 50%;                      /* 세로 중앙 정렬 */
+    transform: translateY(-50%);   /* 정확한 세로 중앙 정렬 */
+    background-color: #d9534f;     /* 빨간색 배경 */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* 삭제 버튼 호버 효과 */
+.comments-list li .comment-delete-btn:hover {
+    background-color: #c9302c;     /* 호버 시 어두운 빨간색으로 변경 */
+}
+
+/* 댓글 작성 폼 */
+.comment-form {
+    width: 97%; /* 부모 요소에 맞게 너비 설정 */
+    margin-top: 20px; /* 위쪽 여백 */
+    padding: 15px; /* 내부 여백 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 */
+	flex-direction: column;
+}
+
+/* 댓글 작성 텍스트 영역 */
+.comment-form textarea {
+    width: 97%; /* 부모 요소에 맞게 너비 설정 */
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* 세로로 크기 조정 가능 */
+    min-height: 100px; /* 최소 높이 설정 */
+    margin-bottom: 10px; /* 하단 여백 */
+}
+
+/* 댓글 작성 버튼 */
+.comment-form input[type="submit"] {
+    background-color: #5a5a5a;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width : 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 댓글 작성 버튼 호버 효과 */
+.comment-form input[type="submit"]{
+	width:100%;
+	background-color: #5a5a5a;
+	cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form input[type="submit"]:hover {
+    background-color: #8e735b; /* 호버 시 버튼 색상 */
+}
+
+
+.comment-form a:hover {
+    text-decoration: underline;
+}
+
+/* 목록으로 돌아가기 버튼 */
+.post-detail form input[type="submit"] {
+    background-color: #5a5a5a; /* 버튼 배경 색 */
+    color: white; /* 버튼 글자 색 */
+    padding: 10px 20px; /* 버튼 안쪽 여백 */
+    border: none; /* 테두리 없음 */
+    border-radius: 30px; /* 둥근 모서리 */
+    font-size: 1rem; /* 글자 크기 */
+    cursor: pointer; /* 마우스 커서 변경 */
+    transition: background-color 0.3s ease; /* 호버 효과 */
+    width: 97%; /* 버튼 너비 100% */
+    margin-top: 20px; /* 위쪽 여백 */
+}
+
+/* 목록으로 돌아가기 버튼 호버 효과 */
+.post-detail form input[type="submit"]:hover {
+    background-color: #6d4f33; /* 호버 시 버튼 배경 색상 변경 */
+}
+
+
+/* 게시글 수정 */
+.post-update {
+    width: 70%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.post-update h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* 수정 폼 스타일 */
+.post-update form {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-update form input[type="text"],
+.post-update form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.post-update form textarea {
+    resize: vertical;
+    height: 150px; /* 기본 높이 설정 */
+}
+
+.post-update form button[type="submit"] {
+	margin-bottom:10px;
+    background-color: #5a5a5a;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width:100%;
+}
+
+.post-update form button[type="submit"]:hover {
+    background-color: #8e735b;
+}
+
+/* 뒤로 가기 버튼 */
+.post-update form input[type="submit"] {
+    background-color: #5a5a5a;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width:100%;
+}
+
+.post-update form input[type="submit"]:hover {
+    background-color: #8e735b;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+    margin-top: auto;  /* 푸터를 항상 맨 아래로 고정 */
+}
