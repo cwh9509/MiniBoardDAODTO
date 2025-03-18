@@ -69,7 +69,7 @@ public class BoardDAO {
             }
         }
 
-        sql += " ORDER BY date DESC LIMIT ? OFFSET ?";
+        sql += " ORDER BY id DESC LIMIT ? OFFSET ?";
 
         try {
             conn = DatabaseUtil.getConnection();
